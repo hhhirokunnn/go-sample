@@ -7,3 +7,5 @@ CREATE TABLE `album` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 ```
+
+https://go.dev/doc/tutorial/database-access
