@@ -78,13 +78,3 @@ func getAlbumByID(c *gin.Context) {
 		c.IndentedJSON(http.StatusOK, alb)
 	}
 }
-
-func getAlbumByArtist(c *gin.Context) {
-	rawArtist := c.Query("artist")
-	album, err := fetchAlbumsByArtist(rawArtist)
-	if err != nil {
-		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
-		return
-	}
-	c.IndentedJSON(http.StatusOK, album)
-}
