@@ -1,11 +1,23 @@
-```sql
-CREATE TABLE `album` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
-  `artist` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `price` decimal(5,2) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+https://go.dev/doc/tutorial/database-access
+
+```bash
+DBUSER=root go run main.go request_handler.go repository.go
 ```
 
-https://go.dev/doc/tutorial/database-access
+```bash
+DBUSER=root go run migration.go
+```
+
+```bash
+curl https://localhost:8080/albums
+
+curl http://localhost:8080/albums \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"id": "4","title": "The Modern Sound of Betty Carter","artist": "Betty Carter","price": 49.99}'
+```
+
+```bash
+mysql -uroot -h127.0.0.1
+```
